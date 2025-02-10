@@ -49,13 +49,14 @@ const ActionDropDown = ({ file }: { file: Models.Document }) => {
         setName(file.name);
         //   setEmails([]);
     };
-    const handleRemovel =async (email: string) => { 
-        const updateEmails = emails.filter((e)=> e !== email);
-        const onSuccess = await UpdateFile({ 
-            fileId: file.$id, 
+    const handleRemovel = async (email: string) => {
+        const updateEmails = emails.filter((e) => e !== email);
+        const onSuccess = await UpdateFile({
+            fileId: file.$id,
             emails: updateEmails,
-            path });
-            if(onSuccess) setEmails(updateEmails);
+            path
+        });
+        if (onSuccess) setEmails(updateEmails);
     }
 
 
@@ -93,7 +94,7 @@ const ActionDropDown = ({ file }: { file: Models.Document }) => {
                 )}
                 {value === "delete" && (
                     <p className="delete-confirmation">
-                         Are you sure you want to delete{` `}
+                        Are you sure you want to delete{` `}
                         <span className="delete-file-name">{file.name}</span>
 
                     </p>
